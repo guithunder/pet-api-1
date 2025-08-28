@@ -10,4 +10,9 @@ app = FastAPI(
     version=settings.APP_VERSION
 )
 
+# Adicione a rota principal aqui
+@app.get("/")
+def read_root():
+    return {"message": "API is running"}
+
 app.include_router(health.router)
